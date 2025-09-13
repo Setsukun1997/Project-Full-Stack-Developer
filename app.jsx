@@ -14,5 +14,16 @@ const App = () => (
     </Routes>
   </Router>
 );
+import Home from './Home';
+import Dashboard from './Dashboard';
+// ... other imports
+
+<Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/dashboard" element={<><IdeaForm /><Dashboard /></>} />
+  <Route path="/detail/:id" element={<Detail />} />
+  <Route path="/edit/:id" element={<EditForm />} />
+</Routes>
 
 export default App;
+
