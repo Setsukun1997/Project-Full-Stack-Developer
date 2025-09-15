@@ -10,10 +10,11 @@ app.use(express.json());
 const connectDB = require('./mongoose');
 connectDB();
 
-app.use('/api/tasks', require('./routes/tasks'));
+app.use('/api/tasks', require('./routes-tasks'));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
 
 
 
