@@ -16,7 +16,7 @@ const App = () => (
 );
 import Home from './Home';
 import Dashboard from './Dashboard';
-// ... other imports
+import './styles.css';
 
 <Routes>
   <Route path="/" element={<Home />} />
@@ -26,4 +26,5 @@ import Dashboard from './Dashboard';
 </Routes>
 
 export default App;
+
 
