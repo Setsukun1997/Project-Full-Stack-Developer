@@ -1,23 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import IdeaItem from './IdeaItem';
+import axios from './Axios';
 
-function IdeaList() {
+const IdeaList = () => {
   const [ideas, setIdeas] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:2222/api/ideas')
-      .then((res) => res.json())
-      .then((data) => setIdeas(data));
+    const token = localStorage.getItem('token');
+
+    axios.get('/api/ideas', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then(res => setIdeas(res.data))
+    .catch(err => {
+      console.error('Error fetching ideas:', err);
+      setError('Failed to load ideas');
+    });
   }, []);
+
+  if (error) return <div>{error}</div>;
 
   return (
     <div>
-      <h2>Stored Ideas</h2>
-      {ideas.map((idea) => (
-        <IdeaItem key={idea._id} idea={idea} />
-      ))}
+      <h2>Your Ideas</h2>
+      {ideas.length === 0 ? (
+        <p>No ideas found.</p>
+      ) : (
+        ideas.map(idea => (
+          <div key={idea._id}>{idea.title}</div>
+        ))
+      )}
     </div>
   );
-}
+};
 
 export default IdeaList;
+
+
+export default IdeaList;
+
