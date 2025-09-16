@@ -1,5 +1,10 @@
 const express = require('express');
 const cors = require('cors');
+app.use(cors({
+  origin: 'https://project-full-stack-developer.vercel.app',
+  credentials: true,
+}));
+
 require('dotenv').config();
 
 const connectDB = require('./mongoose'); 
@@ -18,6 +23,7 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
 
 
 
