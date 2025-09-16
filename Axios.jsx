@@ -13,6 +13,12 @@ function IdeaList() {
     .catch(err => console.error(err));
   }, []);
 
+  const instance = axios.create({
+  baseURL: 'https://project-full-stack-developer.onrender.com',
+  withCredentials: true
+});
+
+
   return (
     <div>
       {ideas.map(idea => (
@@ -21,3 +27,4 @@ function IdeaList() {
     </div>
   );
 }
+
