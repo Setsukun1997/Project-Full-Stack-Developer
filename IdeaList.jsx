@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import axios from './Axios';
+import axios from './AxiosInstance';
 
-const IdeaList = () => {
+function IdeaList() {
   const [ideas, setIdeas] = useState([]);
   const [error, setError] = useState(null);
 
@@ -24,7 +24,7 @@ const IdeaList = () => {
 
   return (
     <div>
-      <h2>Your Ideas</h2>
+      <h2>Ideas from Backend</h2>
       {ideas.length === 0 ? (
         <p>No ideas found.</p>
       ) : (
@@ -34,10 +34,9 @@ const IdeaList = () => {
       )}
     </div>
   );
-};
+}
 
 export default IdeaList;
 
 
-export default IdeaList;
 
