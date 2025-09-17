@@ -1,5 +1,0 @@
-backend/sever.js 
-backend/model/task.js
-backend/routes/task.js
-backend/mongoose.js
-backend/.env
