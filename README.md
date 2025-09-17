@@ -15,7 +15,8 @@ A robust Node.js + Express backend for a full stack web application. Handles use
 
 ## 📦 Folder Structure
 
-<img width="335" height="194" alt="Screenshot 2025-09-17 143012" src="https://github.com/user-attachments/assets/f91ec0b4-84cd-46c1-98e6-7f21f0197227" />
+<img width="582" height="323" alt="Screenshot 2025-09-17 143309" src="https://github.com/user-attachments/assets/fa4de8e7-827f-4870-90d3-6989d1fcea2a" />
+
 
 
 ---
