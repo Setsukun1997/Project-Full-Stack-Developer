@@ -2,8 +2,9 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
-const connectDB = require('./mongoose');
 const taskRoutes = require('./routes/task');
+const mongoose = require('./backend/config/mongoose');
+
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
 
 
 
