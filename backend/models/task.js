@@ -1,18 +1,9 @@
-{
-  "name": "project-full-stack-developer",
-  "version": "1.0.0",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^7.5.0",
-    "dotenv": "^16.3.1",
-    "cors": "^2.8.5"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  }
-}
+const mongoose = require('mongoose');
+
+const taskSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  completed: { type: Boolean, default: false }
+});
+
+module.exports = mongoose.model('Task', taskSchema);
+
