@@ -3,6 +3,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const taskRoutes = require('./backend/routes/task');
+const taskRoutes = require('./backend/model/task');
 const mongoose = require('./backend/config/mongoose');
 
 
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
 
 
 
